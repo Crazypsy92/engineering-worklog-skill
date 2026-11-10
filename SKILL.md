@@ -111,7 +111,7 @@ description: 将工程研发、科研复现、测试和仿真记录整理成企�
 ...
 ```
 
-**完整日报**可参照 `assets/daily-record-template.md`。参考完整示例 `examples/worklog-example.md`，它演示了如何将多条结果归并到四个计划工作包，不把仿真提升误写成稳定抓取。
+**完整日报**可参照 `assets/daily-record-template.md`。参考完整示例 `examples/worklog-example.md`，它演示了如何将多条结果归并到三个计划工作包，不把测试执行完成误写成全部功能通过。
 
 ## 最后核对（输出前执行）
 

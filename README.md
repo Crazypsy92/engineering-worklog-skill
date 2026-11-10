@@ -29,7 +29,7 @@
 ├── assets/
 │   └── daily-record-template.md
 └── examples/
-    └── can-grasping-day.md
+    └── worklog-example.md
 ```
 
 ## 安装（Codex）
@@ -38,14 +38,14 @@
 
 ```bash
 mkdir -p ~/.agents/skills
-git clone https://github.com/Crazypsy92/ngineering-worklog-skill.git ~/.agents/skills/engineering-worklog
+git clone https://github.com/Crazypsy92/engineering-worklog-skill.git ~/.agents/skills/engineering-worklog
 ```
 
 项目级安装：
 
 ```bash
 mkdir -p .agents/skills
-git clone https://github.com/Crazypsy92/ngineering-worklog-skill.git .agents/skills/engineering-worklog
+git clone https://github.com/Crazypsy92/engineering-worklog-skill.git .agents/skills/engineering-worklog
 ```
 
 如果目标目录已经存在，请先备份或更新现有目录，不要直接覆盖本地修改。若使用的 Codex 版本采用其他 Skill 根目录，请以本机 Skill 发现路径为准；关键是 Skill 文件夹内包含 `SKILL.md`。
@@ -75,8 +75,8 @@ git clone https://github.com/Crazypsy92/ngineering-worklog-skill.git .agents/ski
 
 ## 仓库信息
 
-- Repository：`Crazypsy92/ngineering-worklog-skill`
+- Repository：`Crazypsy92/engineering-worklog-skill`
 - Description：`A reusable AI skill for structured daily work reporting, covering task planning, quantitative targets, working hours, deliverables, completion results, and progress tracking.`
 - Skill name：`engineering-worklog`
 
-> 仓库名沿用创建时的实际拼写 `ngineering-worklog-skill`。如需改为 `engineering-worklog-skill`，可在 GitHub 仓库 Settings 中重命名；重命名后请同步更新安装命令与项目索引链接。
+> 仓库名、安装命令和项目索引链接保持一致。

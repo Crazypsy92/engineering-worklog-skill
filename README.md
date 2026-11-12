@@ -1,8 +1,17 @@
-# Engineering Worklog Skill｜研发报工助手
+# Engineering Worklog & Daily Review Skills｜研发报工与每日复盘
 
-把研发工作的技术任务、仿真测试、数据分析和阶段成果转成**企业报工系统可直接粘贴的中文字段**。适用于 Codex 等支持 Agent Skills（`SKILL.md`）的助手。
+本仓库包含**两个独立的 AI Skills**：`engineering-worklog` 负责企业早晚报工，`daily-review` 负责全天**工作、学习、个人生活与杂项**的整理与复盘。均以中文输出，适用于支持 `SKILL.md` 的助手。
 
-## 工作流
+## 两个 Skill 的定位
+
+| Skill | 什么时候用 | 输出侧重点 |
+| --- | --- | --- |
+| `engineering-worklog`（根目录 `SKILL.md`） | 早上计划、下班报工、加班报工 | 任务定义、定性目标、计划/实际数量、工时、输出物、每项完成百分比 |
+| `daily-review`（`skills/daily-review/SKILL.md`） | 一天结束、整理昨日聊天与日志、Obsidian 日记、个人复盘 | 今日事宜、工作与学习、生活、问题与处理、实际结果、后续、个人思考 |
+
+**区分原则：** 企业报工不自动包含私人事项；全天复盘不强制套用 8H 或逐条完成100%。尤其要区分“提出任务/讨论方案”和“已实际执行/验收通过”。
+
+## 研发报工工作流
 
 | 模式 | 使用时间 | 输出字段 |
 | --- | --- | --- |
@@ -29,8 +38,15 @@
 ├── README.md
 ├── assets/
 │   └── daily-record-template.md
-└── examples/
-    └── worklog-example.md
+├── examples/
+│   └── worklog-example.md
+└── skills/
+    └── daily-review/
+        ├── SKILL.md
+        ├── assets/
+        │   └── daily-review-template.md
+        └── examples/
+            └── sample-day.md
 ```
 
 ## 安装（Codex）
@@ -49,7 +65,15 @@ mkdir -p .agents/skills
 git clone https://github.com/Crazypsy92/engineering-worklog-skill.git .agents/skills/engineering-worklog
 ```
 
-如果目标目录已经存在，请先备份或更新现有目录，不要直接覆盖本地修改。若使用的 Codex 版本采用其他 Skill 根目录，请以本机 Skill 发现路径为准；关键是 Skill 文件夹内包含 `SKILL.md`。
+**安装第二个 Skill（WSL/Linux）：** 上述 clone 之后另执行：
+
+```bash
+ln -s "$HOME/.agents/skills/engineering-worklog/skills/daily-review" "$HOME/.agents/skills/daily-review"
+```
+
+这样两个 Skill 都是 `~/.agents/skills/` 的直属目录，能够被按约定扫描该目录的 Agent 识别。若已存在 `daily-review` 文件/目录，先检查再处理，不要盲目覆盖；若运行环境不跟随符号链接，可改用复制目录。更新时在克隆目录执行 `git pull`，符号链接指向的内容会同步更新。
+
+如果目标目录已经存在，请先备份或更新本地修改。各版本 Codex 的 Skill 根路径可能不同，请以本机版本为准。
 
 ## 触发示例
 
@@ -74,10 +98,22 @@ git clone https://github.com/Crazypsy92/engineering-worklog-skill.git .agents/sk
 使用 engineering-worklog，将今晚加班任务写成一行，领导一眼能看明白。
 ```
 
+## 每日复盘示例（含工作与个人）
+
+```text
+使用 daily-review，总结2026/11/11星期三的全部聊天和原始记录。
+分别整理工作研发、论文和技术学习、个人阅读/软件体验、问题与处理、未完成与明日重点。
+注意：我的很多话是交给Codex的任务，只有实际运行结果才能写成已完成。
+```
+
+可以参考 [每日复盘模板](skills/daily-review/assets/daily-review-template.md) 和 [虚构示例](skills/daily-review/examples/sample-day.md)。默认把“今日事宜”放最前，结尾放“今日回顾”，正文适配 Obsidian 原生标题链接。
+
+**隐私约束：** 本仓库是 Public；只发布通用指令、空白模板和匿名虚构示例。真实个人日记、工作数据、照片、公司资料不自动上传 GitHub。
+
 ## 仓库信息
 
 - Repository：`Crazypsy92/engineering-worklog-skill`
 - Description：`A reusable AI skill for structured daily work reporting, covering task planning, quantitative targets, working hours, deliverables, completion results, and progress tracking.`
-- Skill name：`engineering-worklog`
+- Skill names：`engineering-worklog`、`daily-review`
 
 > 仓库名、安装命令和项目索引链接保持一致。

@@ -1,3 +1,10 @@
+---
+type: daily-log
+date: {{date:YYYY-MM-DD}}
+tags:
+  - daily-log
+---
+
 # {{date:YYYY/MM/DD dddd}}
 
 > 本模板按当天记录顺序组织。项目、模块、学习科目和个人分类均由自己填写，不预设固定内容。表格中的 `[ ]` 如需直接点击勾选，请在 Obsidian 安装社区插件 **Table Checkbox Renderer**；不安装插件时，可在编辑模式手动将 `[ ]` 改为 `[x]`。

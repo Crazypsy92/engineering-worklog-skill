@@ -106,7 +106,7 @@ ln -s "$HOME/.agents/skills/engineering-worklog/skills/daily-review" "$HOME/.age
 注意：我的很多话是交给Codex的任务，只有实际运行结果才能写成已完成。
 ```
 
-可以参考 [每日复盘模板](skills/daily-review/assets/daily-review-template.md) 和 [虚构示例](skills/daily-review/examples/sample-day.md)。默认把“今日事宜”放最前，结尾放“今日回顾”，正文适配 Obsidian 原生标题链接。
+可以参考 [每日复盘模板](skills/daily-review/assets/daily-review-template.md) 和 [虚构示例](skills/daily-review/examples/sample-day.md)。**已按用户指定的 Obsidian 六章日志模板更新**：①今日事宜（工作事项/个人安排），②今日工作记录（项目→模块），③AI对话与问题记录（工作/个人），④个人记录与随手记，⑤日终回顾，⑥关联资料。个人工程事项只列在1.2个人安排和3.2个人对话中，**不得写进第二章工作记录**；今日事宜置顶，日终回顾在关联资料前。
 
 **隐私约束：** 本仓库是 Public；只发布通用指令、空白模板和匿名虚构示例。真实个人日记、工作数据、照片、公司资料不自动上传 GitHub。
 
